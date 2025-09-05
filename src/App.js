@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -7,22 +6,18 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faBriefcase,
-  faSchool,
-  faStar,
-} from '@fortawesome/free-solid-svg-icons';
+import { faBrain, faFlask, faBook } from '@fortawesome/free-solid-svg-icons';
 
 const workIcon = {
-  icon: <FontAwesomeIcon icon={faBriefcase} />,
+  icon: <FontAwesomeIcon icon={faBrain} />,
   iconStyle: { background: 'rgb(33, 150, 243)', color: '#fff' },
 };
 const schoolIcon = {
-  icon: <FontAwesomeIcon icon={faSchool} />,
+  icon: <FontAwesomeIcon icon={faFlask} />,
   iconStyle: { background: 'rgb(233, 30, 99)', color: '#fff' },
 };
 const starIcon = {
-  icon: <FontAwesomeIcon icon={faStar} />,
+  icon: <FontAwesomeIcon icon={faBook} />,
   iconStyle: { background: 'rgb(16, 204, 82)', color: '#fff' },
 };
 
@@ -81,23 +76,23 @@ function App() {
   ];
 
   return (
-    <div className="App">
+    <div className="App" style={{ background: 'none' }}>
       <h3>
         Create a vertical timeline component in React -{' '}
-        <a href="https://www.cluemediator.com/" target="_blank">
+        <a href="https://www.cluemediator.com/" target="_blank" rel="noreferrer">
           Clue Mediator
         </a>
       </h3>
-      <VerticalTimeline>
+      <VerticalTimeline style={{ background: 'none' }}>
         {timeline.map((t, i) => {
           const contentStyle =
             i === 0
               ? { background: 'rgb(33, 150, 243)', color: '#fff' }
-              : undefined;
+              : { background: 'none', color: '#000', boxShadow: 'none' };
           const arrowStyle =
             i === 0
               ? { borderRight: '7px solid  rgb(33, 150, 243)' }
-              : undefined;
+              : { borderRight: '7px solid transparent' };
 
           return (
             <VerticalTimelineElement
@@ -108,17 +103,15 @@ function App() {
               date={t.date}
               {...t.icon}
             >
-              {t.title ? (
-                <React.Fragment>
+              {t.title && (
+                <>
                   <h3 className="vertical-timeline-element-title">{t.title}</h3>
                   {t.subtitle && (
-                    <h4 className="vertical-timeline-element-subtitle">
-                      {t.subtitle}
-                    </h4>
+                    <h4 className="vertical-timeline-element-subtitle">{t.subtitle}</h4>
                   )}
                   {t.desc && <p>{t.desc}</p>}
-                </React.Fragment>
-              ) : undefined}
+                </>
+              )}
             </VerticalTimelineElement>
           );
         })}

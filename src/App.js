@@ -32,7 +32,6 @@ import {
   faUniversity,
   faEye,
   faRobot,
-  faBrainCircuit,
   faStar,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -306,7 +305,7 @@ function App() {
       date: '1980s',
       title: 'Eric Kandel (USA)',
       desc: 'Kandel studies memory in sea slugs, demonstrating that learning alters synaptic strength.',
-      icon: generateIcon(faBrainCircuit),
+      icon: generateIcon(faBrain),
       img: '/images/placeholder.png',
     },
     {

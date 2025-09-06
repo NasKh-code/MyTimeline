@@ -19,7 +19,6 @@ import {
   faQuestion,
   faBolt,
   faMap,
-  faBolt,
   faProjectDiagram,
   faUserInjured,
   faLayerGroup,
@@ -196,7 +195,7 @@ function App() {
       date: '1852–1934',
       title: 'Santiago Ramón y Cajal (Spain)',
       desc: 'Using Golgi’s stain, Cajal proves the Neuron Doctrine: the brain is made of discrete neurons. Modern neuroscience is born.',
-      icon: generateIcon(faBrainCircuit),
+      icon: generateIcon(faBrain),
       img: '/images/placeholder.png',
     },
     {

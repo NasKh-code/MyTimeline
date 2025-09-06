@@ -1,5 +1,21 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #dddddd;
+  background-color: none;
   margin: 20px;
+}
+:root {
+  --brown: #5c3419;
+  --cream:#f6d4ab;
+}
+.vertical-timeline::before {
+  background: var(--brown); /* change this to any color */
+}
+/* Remove default white border around the icon circle */
+.vertical-timeline-element-icon {
+  box-shadow: var(--brown) !important;
+}
+
+/* Cut the timeline line at the last element */
+.custom-timeline::before {
+  height: 100%; /* default line height */
 }
